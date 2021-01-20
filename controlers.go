@@ -68,8 +68,8 @@ func getPrimesHandler(w http.ResponseWriter, r *http.Request) {
 		getPrimesCounter.WithLabelValues(status).Inc()
 	}()
 	result := primesInRange(lower, upper)
-	respondWithJSON(w, http.StatusOK, result)
 
+	respondWithJSON(w, http.StatusOK, result)
 }
 
 func getPrimeFactorsHandler(w http.ResponseWriter, r *http.Request) {
@@ -86,8 +86,8 @@ func getPrimeFactorsHandler(w http.ResponseWriter, r *http.Request) {
 		getPrimeFactors.WithLabelValues(status).Inc()
 	}()
 	result := primeFactors(n)
-	respondWithJSON(w, http.StatusOK, result)
 
+	respondWithJSON(w, http.StatusOK, result)
 }
 func getNumberOfDivisorsHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("GET /numberOfDivisors")
@@ -103,6 +103,6 @@ func getNumberOfDivisorsHandler(w http.ResponseWriter, r *http.Request) {
 		getNumberOfDivisors.WithLabelValues(status).Inc()
 	}()
 	result := numberOfDivisors(n)
-	respondWithJSON(w, http.StatusOK, result)
 
+	respondWithJSON(w, http.StatusOK, result)
 }

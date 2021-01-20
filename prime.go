@@ -10,7 +10,7 @@ var primes []int
 // returns a slice of size n where p[i] equals to the greatest prime divisor of i
 // and returns the primes numbers <= n
 func SieveOfEratosthenes(n int) ([]int, []int) {
-	var p = make([]int, n+1)
+	var p = make([]int, n + 1)
 	var primes = make([]int, 0)
 	p[0] = 1
 	for i := 1; i <= n; i++ {
@@ -52,7 +52,7 @@ func primeFactors(n int) []Pair {
 	for n > 1 {
 		var d = p[n]
 		cnt := 0
-		for n%d == 0 {
+		for n % d == 0 {
 			cnt++
 			n /= d
 		}
@@ -75,7 +75,7 @@ func primesInRange(low int, high int) []int {
 		low, high = high, low
 	}
 	primes = getPrimes()
-	left := 0
+	left  := 0
 	right := len(primes) - 1
 	start := 0
 	for left <= right {
