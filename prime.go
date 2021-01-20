@@ -1,4 +1,4 @@
-package prime
+package main
 
 //MAXN represent the maximum number supported
 const MAXN = 1000000
@@ -40,10 +40,10 @@ func getPrimes() []int {
 	return primes
 }
 
-// Pair of intergers where num represent the prime factor and pow its power
+// Pair of intergers where prime represent the prime factor and power its power
 type Pair struct {
-	num int
-	pow int
+	Prime int
+	Power int
 }
 
 func primeFactors(n int) []Pair {
@@ -65,7 +65,7 @@ func numberOfDivisors(n int) int {
 	numDiv := 1
 	pf := primeFactors(n)
 	for i := 0; i < len(pf); i++ {
-		numDiv *= (pf[i].pow + 1)
+		numDiv *= (pf[i].Power + 1)
 	}
 	return numDiv
 }
@@ -75,12 +75,12 @@ func primesInRange(low int, high int) []int {
 		low, high = high, low
 	}
 	primes = getPrimes()
-	left  := 0
+	left := 0
 	right := len(primes) - 1
 	start := 0
 	for left <= right {
 		mid := (left + right) / 2
-		if primes[mid] >= low {
+		if low <= primes[mid] {
 			start = mid
 			right = mid - 1
 		} else {

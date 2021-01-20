@@ -1,4 +1,4 @@
-package prime
+package main
 
 import (
 	"fmt"
