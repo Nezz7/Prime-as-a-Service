@@ -15,10 +15,10 @@ Implemented algorithms
 ## Endpoints
 
 | Path     |  Type        | Description        | 
-|:-------------:|:-------------:|:-------------:|
-| /apiv/primes/{lower:[0-9]+}&{upper:[0-9]+} | GET | Return a list of prime numbers between lower and upper inclusive.|
-| /api/prime-factors/{n:[0-9]+}              | GET | Return a list of prime facotrs of n and their power.  | 
-| /api/number-of-divisors/{n:[0-9]+}          | GET | Return the number of divisors of n.  | 
+|:-------------|:-------------:|-------------:|
+| /apiv/primes/lower&upper | GET | Return a list of prime numbers between lower and upper inclusive.|
+| /api/prime-factors/n              | GET | Return a list of prime facotrs of n and their power.  | 
+| /api/number-of-divisors/n          | GET | Return the number of divisors of n.  | 
 | /api/metrics/                             | GET | Return the metrics provided by promethus.  | 
 
 
