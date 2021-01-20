@@ -7,19 +7,19 @@ Prime as a Service is a REST API implemented in [Go](http://golang.org) that pro
 
 
 # Algorithm
-Implemented algorithms
+Implemented algorithms :
 * [Sieve of Eratosthenes](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html) 
 * [Prime factorization](https://cp-algorithms.com/algebra/factorization.html) 
 * [Number of divisors](https://cp-algorithms.com/algebra/divisors.html) 
 
 ## Endpoints
 
-| Path     |  Type        | Description        | 
-|:-------------|:-------------:|-------------:|
-| /apiv/primes/lower&upper | GET | Return a list of prime numbers between lower and upper inclusive.|
-| /api/prime-factors/n              | GET | Return a list of prime facotrs of n and their power.  | 
-| /api/number-of-divisors/n          | GET | Return the number of divisors of n.  | 
-| /api/metrics/                             | GET | Return the metrics provided by promethus.  | 
+| Path                                  | Type  | Description                                                      | 
+|:--------------------------------------| :---: |:-----------------------------------------------------------------|
+| /apiv/primes/lower&upper              |  GET  | Return a list of prime numbers between lower and upper inclusive.|
+| /api/prime-factors/n                  |  GET  | Return a list of prime facotrs of n and their power.             | 
+| /api/number-of-divisors/n             |  GET  | Return the number of divisors of n.                              | 
+| /api/metrics/                         |  GET  | Return the metrics provided by promethus.                        | |          
 
 
 # Performance
