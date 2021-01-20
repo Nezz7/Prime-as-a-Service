@@ -20,14 +20,14 @@ var getPrimesCounter = prometheus.NewCounterVec(
 var getPrimeFactors = prometheus.NewCounterVec(
 	prometheus.CounterOpts{
 		Name: "http_request_get_prime_factors_count", // metric name
-		Help: "Number of GET /primeFactors request.",
+		Help: "Number of GET /prime-factors request.",
 	},
 	[]string{"status"}, // labels
 )
 var getNumberOfDivisors = prometheus.NewCounterVec(
 	prometheus.CounterOpts{
 		Name: "http_request_get_number_of_divisors_count", // metric name
-		Help: "Number of GET /NumberOfDivisors request.",
+		Help: "Number of GET /number-of-divisors request.",
 	},
 	[]string{"status"}, // labels
 )
@@ -79,7 +79,7 @@ func getPrimesHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func getPrimeFactorsHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("GET /primeFactors")
+	fmt.Println("GET /prime-factors")
 
 	var status string
 	defer func() {
@@ -100,7 +100,7 @@ func getPrimeFactorsHandler(w http.ResponseWriter, r *http.Request) {
 	respondWithJSON(w, http.StatusOK, result)
 }
 func getNumberOfDivisorsHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("GET /numberOfDivisors")
+	fmt.Println("GET /number-of-divisors")
 
 	var status string
 	defer func() {
