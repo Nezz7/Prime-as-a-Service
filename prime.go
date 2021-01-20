@@ -8,7 +8,7 @@ const MAXN = 1000000
 var p [] int 
 var primes [] int
 
-//SieveOfEratosthenes an implementation of Sieve algorithm in O(Nlog(N))
+//SieveOfEratosthenes an implementation of Sieve algorithm in O(Nlog(log(N)))
 // returns a slice of size n where p[i] equals to the greatest prime divisor of i
 // and returns the primes numbers <= n
 func SieveOfEratosthenes(n int) ([] int, [] int) {
@@ -21,7 +21,7 @@ func SieveOfEratosthenes(n int) ([] int, [] int) {
 	for i := 2; i <= n; i++{
 		if(p[i] == i){
 			primes = append(primes, i)
-			for j := 2 * i; j <= n; j+= i{
+			for j := i; j <= n; j+= i{
 				p[j] = i;
 			}
 		}
@@ -72,6 +72,9 @@ func numberOfDivisors(n int) int{
 	return numDiv
 }
 func getPrimesInRange(low int, high int)[] int{
+	if low > high {
+		low , high = high, low
+	}
 	primes = getPrimes();
 	left  := 0
 	right := len(primes) - 1
@@ -79,8 +82,8 @@ func getPrimesInRange(low int, high int)[] int{
 	for left <= right {
 		mid := (left + right) / 2;
 		if primes[mid] >= low {
+			start = mid
 			right = mid - 1
-			start = mid - 1
 		}else {
 			left = mid + 1
 		}
@@ -99,11 +102,11 @@ func main() {
 		for i := 0; i < len(primes); i++ {
 			fmt.Print(primes[i], " ")
 		}
-		pf := getPrimeFact(60)
+		pf := getPrimeFact(7)
 		for i := 0; i < len(pf); i++{
 			fmt.Println(pf[i].num, " ", pf[i].pow)
 		}
-		r := getPrimesInRange(5, 100)
+		r := getPrimesInRange(1009, 1009)
 		for i := 0; i < len(r); i++ {
 			fmt.Print(r[i], " ")
 		}
