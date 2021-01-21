@@ -1,5 +1,6 @@
 version: '3'
 services:
+
   server:
     image: server-image
     deploy:
@@ -31,11 +32,11 @@ services:
         - ./grafana/provisioning/:/etc/grafana/provisioning/
       env_file:
         - ./grafana/config.monitoring
-      restart: always
       networks:
           - cluster_network
       depends_on:
           - prometheus
+      restart: always
 
    
 volumes:
