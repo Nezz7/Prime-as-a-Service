@@ -16,11 +16,10 @@ Implemented algorithms :
 
 | Path                                  | Type  | Description                                                      | 
 |:--------------------------------------| :---: |:-----------------------------------------------------------------|
-| /apiv/primes/lower&upper              |  GET  | Return a list of prime numbers between lower and upper inclusive.|
-| /api/prime-factors/n                  |  GET  | Return a list of prime facotrs of n and their power.             | 
-| /api/number-of-divisors/n             |  GET  | Return the number of divisors of n.                              | 
-| /api/metrics/                         |  GET  | Return the metrics provided by promethus.                        | |          
-
+| /primes/lower&upper               |  GET  | Return a list of prime numbers between lower and upper inclusive.|
+| /prime-factors/n                  |  GET  | Return a list of prime facotrs of n and their power.             | 
+| /number-of-divisors/n             |  GET  | Return the number of divisors of n.                              | 
+| /metrics                          |  GET  | Return the metrics provided by promethus.                        |      
 
 # Performance
 Performance depends on the size of max number. But as an example, it needs about 0.4 ms to produce the first 1,000,000 prime numbers.
