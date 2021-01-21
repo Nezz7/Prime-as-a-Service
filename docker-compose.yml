@@ -2,8 +2,13 @@ version: '3'
 services:
     server:
       image: server-image
+      stop_grace_period: 30s
       deploy:
-        replicas: 2
+        replicas: 3
+        update_config:
+          delay: 60s
+          parallelism: 1
+          failure_action: rollback
       ports:
         - 8080:8080
       networks:
