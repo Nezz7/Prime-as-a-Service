@@ -4,6 +4,7 @@ Prime as a Service
 
 
 Prime as a Service is a REST API implemented in [Go](http://golang.org) that provides some of the basic functionalities using prime numbers.
+This service was deployed using a Docker Swarm cluster and monitored with Grafana and Prometheus.
 
 
 # Algorithm
@@ -19,7 +20,7 @@ Implemented algorithms :
 | /primes/lower&upper               |  GET  | Return a list of prime numbers between lower and upper inclusive.|
 | /prime-factors/n                  |  GET  | Return a list of prime facotrs of n and their power.             | 
 | /number-of-divisors/n             |  GET  | Return the number of divisors of n.                              | 
-| /metrics                          |  GET  | Return the metrics provided by promethus.                        |      
+| /metrics                          |  GET  | Return the metrics provided by Prometheus.                        |      
 
 ## Deploy
 
