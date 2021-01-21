@@ -21,6 +21,21 @@ Implemented algorithms :
 | /number-of-divisors/n             |  GET  | Return the number of divisors of n.                              | 
 | /metrics                          |  GET  | Return the metrics provided by promethus.                        |      
 
+## Deploy
+
+1. Clone this repository <br>
+`$ git clone https://github.com/Nezz7/prime-as-service.git`
+2. Change the current working directory <br>
+`$ cd /prime-as-a-service`<br>
+3. Create the docker image : server-image  <br>
+`$ docker build -t server-image .`<br>
+4. Initialize the swarm <br>
+`$ docker swarm init`<br>
+Don't forget to save the token.<br>
+5. Deploy the stack to the swarm<br>
+`$ docker stack deploy --compose-file docker-compose.yml  $SERVICE_NAME`<br>
+6. Check that it’s running <br>
+`$ docker stack services $SERVICE_NAME`<br>
 # Performance
 Performance depends on the size of max number. But as an example, it needs about 0.4 ms to produce the first 1,000,000 prime numbers.
 
