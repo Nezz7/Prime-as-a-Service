@@ -31,14 +31,11 @@ services:
         - ./grafana/provisioning/:/etc/grafana/provisioning/
       env_file:
         - ./grafana/config.monitoring
-      networks:
-        - back-tier
-        - front-tier
       restart: always
-          networks:
-              - cluster_network
-          depends_on:
-              - prometheus
+      networks:
+          - cluster_network
+      depends_on:
+          - prometheus
 
    
 volumes:
