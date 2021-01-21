@@ -1,24 +1,26 @@
 version: '3'
 services:
-    server:
-      image: server-image
-      deploy:
-        replicas: 2
-      ports:
-        - 8080:8080
-      networks:
-        - cluster_network
-    prometheus:
-        image: prom/prometheus
-        command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
-        volumes:
-            - ./prometheus:/etc/prometheus
-            - prometheus-data:/prometheus
-        networks:
-            - cluster_network
-        depends_on: 
-            - server
-     grafana:
+  server:
+    image: server-image
+    deploy:
+      replicas: 2
+    ports:
+      - 8080:8080
+    networks:
+      - cluster_network
+
+  prometheus:
+    image: prom/prometheus
+    command: --web.enable-lifecycle  --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus-data:/prometheus
+    networks:
+      - cluster_network
+    depends_on: 
+      - server
+
+    grafana:
       image: grafana/grafana
       depends_on:
         - prometheus
@@ -37,7 +39,7 @@ services:
               - cluster_network
           depends_on:
               - prometheus
-  
+
    
 volumes:
     prometheus-data:
