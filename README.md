@@ -7,12 +7,16 @@ Prime as a Service is a REST API implemented in [Go](http://golang.org) that pro
 This service was deployed using a Docker Swarm cluster and monitored with Grafana and Prometheus.
 
 
-# Algorithm
+## Algorithm
 Implemented algorithms :
 * [Sieve of Eratosthenes](https://cp-algorithms.com/algebra/sieve-of-eratosthenes.html) 
 * [Prime factorization](https://cp-algorithms.com/algebra/factorization.html) 
 * [Number of divisors](https://cp-algorithms.com/algebra/divisors.html) 
 
+
+## Architecture
+
+![Architecture](https://github.com/Nezz7/Prime-as-a-Service/blob/main/img/Prime%20as%20a%20Service%20architecture.PNG)
 ## Endpoints
 
 | Path                                  | Type  | Description                                                      | 
